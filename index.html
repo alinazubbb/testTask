@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+<head>
+	<title>Test</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:700" rel="stylesheet">
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="person-card-wrap">
+		<div class="photo">
+			<img class="photo__source" src="img/person.png" alt="person">
+		</div>
+		<div class="info">
+			<div class="info__name">Вероника Ростова </div>
+			<div class="info__position">Менеджер по продажам</div>
+			<div class="info__message">Подберу для вас самые лучшие предложения.Мои услуги абсолютно </div>
+		</div>
+		<div class="services">
+			<div class="services__head">Услуг</div>
+			<div class="services__list">
+				<div class="services__item">
+					<div class="services__progress services__progress_green">Ручное бронирование</div>
+					<div class="services__progress__value" data-val="11">11</div>
+				</div>
+				<div class="services__item">
+					<div class="services__progress services__progress_blue">Пакетные туры</div>
+					<div class="services__progress__value" data-val="3">3</div>
+				</div>
+				<div class="services__item">
+					<div class="services__progress services__progress_blue">Отели</div>
+					<div class="services__progress__value" data-val="1">1</div>
+				</div>
+			</div>
+			<div class="services__total">
+				Всего <span class="services__total__count">15</span>
+			</div>
+		</div>
+		<div class="reviews" ng-controller="ReviewsCtrl">
+			<div class="reviews__head">Последние отзывы</div>
+			<a href="#" class="reviews__all">Все отзывы</a>
+			<div class="reviews__counters">
+				<span class="reviews__counters__item">
+					<img class="reviews__counters__item_size" src="img/like.svg" alt="like">
+					131
+				</span>
+				<span class="reviews__counters__item">
+					<img class="reviews__counters__item_size" src="img/msg.svg" alt="msg">
+					15
+				</span>
+			</div>
+			<div class="reviews__list">
+				<div class="reviews__item" ng-repeat="item in reviews">
+					<span class="reviews__item__head">Самуил</span>
+					<span class="reviews__item__date">13 октября 2011</span>
+					<div class="reviews__item__message">{{item.text}}</div>
+				</div>
+				
+			</div>
+			<form class="reviews__form" action="">
+				<textarea ng-model="reviewMsg" class="reviews__form__text" name="" id=""></textarea>
+				<button ng-click="addReview()" class="reviews__form__submit">Написать консультанту</button>
+			</form>
+		</div>
+	</div>
+	<!-- JS -->
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

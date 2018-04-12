@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter id="c" x="0px" y="0px" width="12px" height="14px" filterUnits="userSpaceOnUse">
+<feOffset dx="0" dy="1" in="SourceAlpha"/>
+<feGaussianBlur result="blurOut"/>
+<feFlood flood-color="rgb(255, 255, 255)" result="floodOut"/>
+<feComposite in="floodOut" in2="blurOut" operator="atop"/>
+<feComponentTransfer>
+<feFuncA slope="0.9" type="linear"/>
+</feComponentTransfer>
+<feMerge>
+<feMergeNode/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
+<filter id="b">
+<feOffset dx="0" dy="-1" in="SourceAlpha"/>
+<feGaussianBlur result="blurOut"/>
+<feFlood flood-color="rgb(0, 0, 0)" result="floodOut"/>
+<feComposite in="floodOut" in2="blurOut" operator="out" result="compOut"/>
+<feComposite in="compOut" in2="SourceAlpha" operator="in"/>
+<feComponentTransfer>
+<feFuncA slope="0.3" type="linear"/>
+</feComponentTransfer>
+<feBlend in2="SourceGraphic" mode="multiply"/>
+</filter>
+<filter id="a">
+<feFlood flood-color="rgb(115, 180, 213)" result="floodOut"/>
+<feComposite in="floodOut" in2="SourceGraphic" operator="atop" result="compOut"/>
+<feBlend in="compOut" in2="SourceGraphic"/>
+</filter>
+</defs>
+<g filter="url(#c)">
+<g filter="url(#b)">
+<g filter="url(#a)">
+<path d="m6.029 12.661v0.065s-0.023-0.021-0.035-0.032c-0.012 0.011-0.035 0.032-0.035 0.032v-0.065c-0.672-0.625-5.981-5.63-5.959-7.698 0.023-2.207 1.427-3.006 3.024-2.982 1.559 0.023 2.907 1.403 2.97 1.467 0.063-0.064 1.411-1.444 2.97-1.467 1.597-0.024 3.001 0.775 3.024 2.982 0.022 2.068-5.287 7.073-5.959 7.698z" fill="#333" fill-rule="evenodd"/>
+</g>
+</g>
+</g>
+</svg>
